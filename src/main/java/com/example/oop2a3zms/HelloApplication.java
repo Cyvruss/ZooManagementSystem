@@ -1,4 +1,4 @@
-package com.example.zoomanagementsystem;
+package com.example.oop2a3zms;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

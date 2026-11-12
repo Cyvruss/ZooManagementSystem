@@ -1,4 +1,4 @@
-package com.example.zoomanagementsystem;
+package com.example.oop2a3zms;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
