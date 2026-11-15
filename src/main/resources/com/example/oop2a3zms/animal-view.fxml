@@ -1,14 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="AnimalController"
-            prefHeight="400.0" prefWidth="600.0">
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.oop2a3zms.AnimalController"
+            prefWidth="600" prefHeight="400"
+            style="-fx-background-color: white;">
 
-</AnchorPane>
+    <top>
+        <VBox spacing="8" alignment="CENTER">
+            <padding>
+                <Insets top="20" bottom="10"/>
+            </padding>
+
+            <HBox spacing="10" alignment="CENTER">
+                <Label text="🐾"
+                       style="-fx-font-size: 28px;"/>
+
+                <Label text="Animal Management"
+                       style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+            </HBox>
+
+            <Label fx:id="aEnclosureNameLabel"
+                   text="Enclosure: Lions"
+                   style="-fx-font-size: 14px;"/>
+        </VBox>
+    </top>
+
+    <center>
+        <HBox spacing="25">
+            <padding>
+                <Insets top="15" left="25" right="25" bottom="15"/>
+            </padding>
+
+            <VBox spacing="10" prefWidth="240">
+                <Label text="Animals"
+                       style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                <ListView fx:id="aAnimalListView"
+                          prefHeight="230"
+                          prefWidth="220"/>
+            </VBox>
+
+            <VBox spacing="10" prefWidth="250">
+                <Label text="Animal Type"/>
+
+                <ComboBox fx:id="aAnimalTypeComboBox"
+                          promptText="Choose type"
+                          prefWidth="200"/>
+
+                <Label text="Name"/>
+
+                <TextField fx:id="aNameTextField"
+                           promptText="Enter name"/>
+
+                <Label text="Age"/>
+
+                <TextField fx:id="aAgeTextField"
+                           promptText="Enter age"/>
+            </VBox>
+        </HBox>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER">
+            <padding>
+                <Insets top="10" bottom="20"/>
+            </padding>
+
+            <Button text="Add"
+                    onAction="#onAddAnimalClick"/>
+
+            <Button text="Update"
+                    onAction="#onUpdateAnimalClick"/>
+
+            <Button text="Remove"
+                    onAction="#onRemoveAnimalClick"/>
+
+            <Button text="Back"
+                    onAction="#onBackClick"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
