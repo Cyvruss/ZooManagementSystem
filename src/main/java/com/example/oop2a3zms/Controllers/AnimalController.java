@@ -1,6 +1,4 @@
-package com.example.oop2a3zms;
-
-import javafx.event.ActionEvent;
+package com.example.oop2a3zms.Controllers;
 
 
 import javafx.fxml.FXML;
