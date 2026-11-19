@@ -1,6 +1,7 @@
 module com.example.oop2a3zms {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.desktop;
 
 
     opens com.example.oop2a3zms to javafx.fxml;
