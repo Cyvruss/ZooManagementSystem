@@ -1,6 +1,9 @@
 package com.example.oop2a3zms.Model;
 
+import java.util.List;
+
 public class Enclosure implements ZooComponent {
+    private List<Enclosure> aComponents;
 
     private String aEnclosureName;
 
@@ -19,10 +22,14 @@ public class Enclosure implements ZooComponent {
 
     @Override
     public int countAnimals() {
-        return 0;
+        int count = 0;
+        for (Enclosure component : aComponents) {
+            count += component.countAnimals();
+        }
+        return count;
     }
 
     public String toString() {
-        return
+        return aEnclosureName + " (" + countAnimals() + ")";
     }
 }

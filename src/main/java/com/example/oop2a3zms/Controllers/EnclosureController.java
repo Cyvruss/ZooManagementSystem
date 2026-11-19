@@ -29,7 +29,7 @@ public class EnclosureController {
     private Label EncSectionTitleLabel;
 
     @FXML
-    private ListView<String> EncAnimalsListview;
+    private ListView<Animal> EncAnimalsListview;
 
     @FXML
     private Button addAnimalButton;
@@ -54,10 +54,6 @@ public class EnclosureController {
     private void onAddAnimalButtonClick(Animal pAnimal, ActionEvent pEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ZMSApplication.class.getResource("animal-view.fxml"));
         Parent view = fxmlLoader.load();
-        AnimalController newAnimalViewController = fxmlLoader.getController();
-        //AnimalController needs setAnimal method
-        //                          V
-        newAnimalViewController.setAnimal(getSelectedAnimal());
         Scene nextScene = new Scene(view, 500, 500);
         Stage nextStage = new Stage();
         nextStage.setScene(nextScene);
@@ -68,8 +64,8 @@ public class EnclosureController {
     }
 
     @FXML
-    private void onEditAnimalButton() throws IOException{
-        String aSelected = EncAnimalsListview.getSelectionModel().getSelectedItem();
+    private void onEditAnimalButtonClick() throws IOException{
+        Animal aSelected = EncAnimalsListview.getSelectionModel().getSelectedItem();
         if (aSelected == null) {
             return;
         }
@@ -78,18 +74,12 @@ public class EnclosureController {
         Stage aStage = new Stage();
         aStage.setScene(new Scene(aLoader.load()));
 
-        aLoader.<EnclosureController>getController().setAnimal(aSelected);
-
-
+        aLoader.<AnimalController>getController().setAnimal(aSelected);
     }
 
     public void setEnclosure(Enclosure pEnclosure) {
         aCurrentEnclosure = pEnclosure;
         updateView();
-    }
-
-    private Animal getSelectedAnimal() {
-        
     }
 
     private void updateView() {

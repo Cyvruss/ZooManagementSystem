@@ -13,11 +13,23 @@
    <bottom>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="addAnimalButton" mnemonicParsing="false" onAction="#onAddAnimalButtonClick" text="Add" />
-            <Button fx:id="deleteButton" mnemonicParsing="false" text="Delete" />
+            <Button fx:id="addAnimalButton" mnemonicParsing="false" onAction="#onAddAnimalButtonClick" text="Add">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin></Button>
+            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#onDeleteButtonClick" text="Delete">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin></Button>
             <Button fx:id="editAnimalButton" mnemonicParsing="false" onAction="#onEditAnimalButtonClick" text="Edit">
                <HBox.margin>
-                  <Insets />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
                <font>
                   <Font size="15.0" />
@@ -25,7 +37,7 @@
             </Button>
             <Button fx:id="encBackButton" mnemonicParsing="false" onAction="#onEncBackButtonClick" text="Back">
                <HBox.margin>
-                  <Insets />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
                <font>
                   <Font size="15.0" />
