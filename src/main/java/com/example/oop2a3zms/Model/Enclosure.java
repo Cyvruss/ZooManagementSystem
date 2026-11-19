@@ -1,6 +1,6 @@
 package com.example.oop2a3zms.Model;
 
-public class Enclosure {
+public class Enclosure implements ZooComponent {
 
     private String aEnclosureName;
 
@@ -8,11 +8,17 @@ public class Enclosure {
         aEnclosureName = pEnclosureName;
     }
 
-    public String getEnclosureName() {
+    public void setEnclosureName(String pEnclosureName) {
+        aEnclosureName = pEnclosureName;
+    }
+
+    @Override
+    public String getName() {
         return aEnclosureName;
     }
 
-    public void setEnclosureName(String pEnclosureName) {
-        aEnclosureName = pEnclosureName;
+    @Override
+    public int countAnimals() {
+        return 0;
     }
 }
