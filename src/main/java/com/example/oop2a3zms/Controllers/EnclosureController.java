@@ -40,11 +40,6 @@ public class EnclosureController {
     private Enclosure aCurrentEnclosure;
 
     @FXML
-    private void onEncEditAnimalButtonClick() {
-
-    }
-
-    @FXML
     private void onEncBackButtonClick() {
         Stage stage = (Stage) EncSectionTitleLabel.getScene().getWindow();
         stage.close();
