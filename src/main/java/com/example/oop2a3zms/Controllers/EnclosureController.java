@@ -1,40 +1,4 @@
-
-package com.example.oop2a3zms.Controllers;
-
-import com.example.oop2a3zms.Model.Animal;
-import com.example.oop2a3zms.Model.Enclosure;
-import com.example.oop2a3zms.Model.ZooComponent;
-import com.example.oop2a3zms.ZMSApplication;
-
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.event.ActionEvent;
-
-import java.io.IOException;
-
-public class EnclosureController {
-
-    @FXML
-    private Button EncEditAnimalButton;
-
-    @FXML
-    private Button EncBackButton;
-
-    @FXML
-    private Label EncSectionTitleLabel;
-
-    @FXML
-    private ListView<ZooComponent> EncAnimalsListview; // changed the type for ZooComponent
-
-    @FXML
+ @FXML
     private Button addAnimalButton;
 
     @FXML
