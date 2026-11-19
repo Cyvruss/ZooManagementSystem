@@ -33,29 +33,6 @@ public class ZooSectionController {
     }
 
     @FXML
-    private void onSectionAddButtonClick() {
-        TextInputDialog aDialog = new TextInputDialog();
-        aDialog.setHeaderText("Enter component name");
-
-        aDialog.showAndWait().ifPresent(pName -> {
-            if (!pName.trim().isEmpty()) {
-                aCurrentSection.addComponent(new Enclosure(pName));
-                updateView();
-            }
-        });
-    }
-
-    @FXML
-    private void onSectionRemoveButtonClick() {
-        ZooComponent aSelected = SectionComponentsListView.getSelectionModel().getSelectedItem();
-
-        if (aSelected != null) {
-            aCurrentSection.removeComponent(aSelected);
-            updateView();
-        }
-    }
-
-    @FXML
     private void onSectionOpenButtonClick() throws IOException {
         ZooComponent aSelected = SectionComponentsListView.getSelectionModel().getSelectedItem();
 
