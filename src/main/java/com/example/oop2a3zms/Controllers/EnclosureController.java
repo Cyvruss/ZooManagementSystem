@@ -1,5 +1,6 @@
 package com.example.oop2a3zms.Controllers;
 
+import com.example.oop2a3zms.Model.Enclosure;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -28,5 +29,8 @@ public class EnclosureController {
     @FXML
     private void onEncBackButtonClick() {
 
+    }
+
+    public void setEnclosure(Enclosure aSelected) {
     }
 }
