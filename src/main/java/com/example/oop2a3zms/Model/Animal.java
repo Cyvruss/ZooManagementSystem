@@ -1,3 +1,4 @@
+
 package com.example.oop2a3zms.Model;
 
 /**
@@ -6,7 +7,7 @@ package com.example.oop2a3zms.Model;
  *
  * @author Keren
  */
-public class Animal {
+public class Animal implements ZooComponent {
 
     private String aName;
     private int aAge;
@@ -22,40 +23,30 @@ public class Animal {
         aAge = pAge;
     }
 
-    /**
-     * Gets the animal's name.
-     *
-     * @return the animal's name
-     */
     public String getName() {
         return aName;
     }
 
-    /**
-     * Gets the animal's age.
-     *
-     * @return the animal's age
-     */
     public int getAge() {
         return aAge;
     }
 
-    /**
-     * Changes the animal's name.
-     *
-     * @param pName the new name
-     */
     public void setName(String pName) {
         aName = pName;
     }
 
-    /**
-     * Changes the animal's age.
-     *
-     * @param pAge the new age
-     */
     public void setAge(int pAge) {
         aAge = pAge;
+    }
+
+    /**
+     * An individual animal counts as one.
+     *
+     * @return 1
+     */
+    @Override
+    public int countAnimals() {
+        return 1;
     }
 
     /**

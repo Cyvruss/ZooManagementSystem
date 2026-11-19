@@ -57,7 +57,7 @@ public class ZooSectionController {
             aLoader.<EnclosureController>getController().setEnclosure((Enclosure) aSelected);
         }
 
-        aStage.show();
+        aStage.showAndWait(); // changed the show for just the showandWait to make it wait until the other  is closed
     }
 
     @FXML

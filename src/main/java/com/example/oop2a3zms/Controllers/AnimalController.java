@@ -1,6 +1,7 @@
 package com.example.oop2a3zms.Controllers;
 
 import com.example.oop2a3zms.Model.Animal;
+import com.example.oop2a3zms.Model.Enclosure;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -21,17 +22,32 @@ public class AnimalController {
     private TextField aAgeTextField;
 
     private Animal aAnimal;
+    private Enclosure aEnclosure;
 
     /**
-     * Receives the animal selected from the enclosure view.
+     * Receives an existing animal when editing.
      *
      * @param pAnimal the selected animal
      */
     public void setAnimal(Animal pAnimal) {
         aAnimal = pAnimal;
+        aEnclosure = null;
 
         aNameTextField.setText(aAnimal.getName());
         aAgeTextField.setText(String.valueOf(aAnimal.getAge()));
+    }
+
+    /**
+     * Receives an enclosure when adding an animal.
+     *
+     * @param pEnclosure the current enclosure
+     */
+    public void setEnclosure(Enclosure pEnclosure) {
+        aEnclosure = pEnclosure;
+        aAnimal = null;
+
+        aNameTextField.clear();
+        aAgeTextField.clear();
     }
 
     /**
@@ -43,7 +59,6 @@ public class AnimalController {
         String name = aNameTextField.getText().trim();
         String ageText = aAgeTextField.getText().trim();
 
-        // Checks that both fields are completed.
         if (name.isEmpty() || ageText.isEmpty()) {
             showMessage("Please enter a name and age.");
             return;
@@ -52,15 +67,27 @@ public class AnimalController {
         try {
             int age = Integer.parseInt(ageText);
 
-            // Checks that the age is not negative.
             if (age < 0) {
                 showMessage("Age cannot be negative.");
                 return;
             }
 
-            // Updates the animal information.
-            aAnimal.setName(name);
-            aAnimal.setAge(age);
+            if (aAnimal != null) {
+
+                // Updates an existing animal.
+                aAnimal.setName(name);
+                aAnimal.setAge(age);
+
+            } else if (aEnclosure != null) {
+
+                // Creates and adds a new animal.
+                Animal aNewAnimal = new Animal(name, age);
+                aEnclosure.addComponent(aNewAnimal);
+
+            } else {
+                showMessage("Unable to save the animal.");
+                return;
+            }
 
             closeWindow();
 
@@ -70,7 +97,7 @@ public class AnimalController {
     }
 
     /**
-     * Closes the window without saving changes.
+     * Closes the window without saving.
      */
     @FXML
     private void onCancelClick() {
@@ -80,13 +107,13 @@ public class AnimalController {
     /**
      * Displays a message to the user.
      *
-     * @param message the message to display
+     * @param pMessage the message to display
      */
-    private void showMessage(String message) {
+    private void showMessage(String pMessage) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Animal Management");
         alert.setHeaderText(null);
-        alert.setContentText(message);
+        alert.setContentText(pMessage);
         alert.showAndWait();
     }
 
