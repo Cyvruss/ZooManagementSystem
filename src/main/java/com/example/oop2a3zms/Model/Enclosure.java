@@ -21,4 +21,8 @@ public class Enclosure implements ZooComponent {
     public int countAnimals() {
         return 0;
     }
+
+    public String toString() {
+        return
+    }
 }
