@@ -20,10 +20,10 @@ import java.io.IOException;
 
 public class EnclosureController {
     @FXML
-    private Button EncEditAnimalButton;
+    private Button editAnimalButton;
 
     @FXML
-    private Button EncBackButton;
+    private Button encBackButton;
 
     @FXML
     private Label EncSectionTitleLabel;
